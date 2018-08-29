@@ -9,6 +9,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "npm": "^6.4.0",
     "react": "^16.0.0",
     "react-dom": "~16.4.2"
   },
