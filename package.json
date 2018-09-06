@@ -2,14 +2,15 @@
   "name": "sports-store",
   "version": "1.0.0",
   "license": "MIT",
+  "sideEffects": false,
   "scripts": {
-    "build:development": "cross-env NODE_ENV=development webpack",
-    "build:production": "cross-env NODE_ENV=production webpack",
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development",
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "npm": "^6.4.0",
+    "npm": "^6.4.1",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "~16.4.2"
   },
@@ -18,7 +19,6 @@
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.15",
     "babel-preset-airbnb": "^2.5.3",
-    "cross-env": "~5.2.0",
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
@@ -29,13 +29,10 @@
     "lint-staged": "~7.2.2",
     "npm-run-all": "^4.1.1",
     "prettier": "1.14.2",
-    "prop-types": "^15.6.0",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",
-    "webpack-manifest-plugin": "^2.0.3",
-    "webpack-merge": "^4.1.0",
-    "webpack-pwa-manifest": "^3.3.2"
+    "webpack-manifest-plugin": "^2.0.3"
   },
   "lint-staged": {
     "*.{js,json,jsx}": [
