@@ -1,12 +1,7 @@
 {
   "extends": ["airbnb"],
   "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".json", ".jsx"],
-        "moduleDirectory": ["node_modules", "./src"]
-      }
-    }
+    "import/resolver": "webpack"
   },
   "rules": {
     "no-debugger": "error",

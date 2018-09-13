@@ -1,8 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-module.exports = (_, { mode }) => ({
+const mode = (process || process.env.npm_lifecycle_script.match(/(?<=--mode\s+).+/) || ['production'])[0];
+
+module.exports = {
   mode,
   entry: './src/index.jsx',
   output: {
@@ -13,6 +17,7 @@ module.exports = (_, { mode }) => ({
   resolve: {
     modules: ['node_modules', './src'],
     extensions: ['.js', '.jsx', '.json'],
+    plugins: [new DirectoryNamedWebpackPlugin(true)],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -36,6 +41,7 @@ module.exports = (_, { mode }) => ({
     new ManifestPlugin({
       fileName: 'asset-manifest.json',
     }),
+    new CleanWebpackPlugin(['build']),
   ],
   module: {
     rules: [
@@ -67,4 +73,4 @@ module.exports = (_, { mode }) => ({
     host: '0.0.0.0',
     port: 1000,
   },
-});
+};

@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withToggle } from 'components/HOCs';
 
-function CheckBox({ text, isActive, ...rest }) {
-  return <input type="checkbox" value={text} {...rest} checked={isActive} />;
+function CheckBox({
+  text, isActive, onClick, ...rest
+}) {
+  return <input type="checkbox" onChange={onClick} value={text} {...rest} checked={isActive} />;
 }
 
 CheckBox.displayName = 'CheckBox';

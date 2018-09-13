@@ -4,7 +4,6 @@ build/
 coverage/
 .module-cache
 *.log*
-.vscode
 Thumbs.db
 ehthumbs.db
 ehthumbs_vista.db
